@@ -42,7 +42,7 @@ Every year, student organizations face the same crisis:
 
 - **Backend:** Laravel 11 (PHP 8.2+)
 - **Frontend:** Blade + Livewire 3 + Tailwind CSS
-- **Database:** MySQL / PostgreSQL
+- **Database:** MySQL 
 - **Storage:** Laravel File Storage (S3-compatible)
 
 ---
@@ -111,11 +111,6 @@ This is a student-led open source project. Contributions welcome!
 
 ---
 
-## License
-
-MIT License - See [LICENSE](LICENSE) for details
-
----
 
 ## Contact
 
