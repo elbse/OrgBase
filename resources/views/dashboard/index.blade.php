@@ -9,8 +9,9 @@
 </head>
 <body class="h-screen flex flex-col items-center justify-center bg-gray-100">
     <div class="container">
-        <h1 class="text-3xl font-bold bg-green-300">Welcome to the Dashboard</h1>
-        <p>This is your main dashboard where you can manage your settings and view your data.</p>
+        <h1 class="text-3xl font-bold">Welcome to the OrgBase</h1>
+        <p>For students, by students. Building something that makes campus life better. 🎓</p>
+        <p>Status: 🚧 Under Active Development</p>
     </div>
 </body>
 </html>
