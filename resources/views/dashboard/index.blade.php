@@ -25,18 +25,46 @@
             </div>
     </div>
 
-    <div class="container mx-auto py-8 justify-center items-center flex-col flex" >
+    <div class="cards mx-auto py-8 justify-center items-center flex-col flex" >
         <h1 class="text-3xl font-bold mb-4 mt-10">Powerful Features</h1>
 
-        {{-- <div class="border p-6 rounded-lg shadow-lg bg-white mt-6 col-span-4">
-            <h2 class="text-xl font-bold mb-4 mt-10">Member Management</h2>
-            <p class="text-gray-700">Easily manage your community members with our intuitive member management system. Keep track of member details, roles, and communication all in one place.</p>
+        <div class="grid grid-cols-4 md:grid-cols-3 gap-6">
+        <div class="border p-6 rounded-lg shadow-lg bg-white col-span-4 md:col-span-1 w-30px">
+            <h2 class="text-xl font-bold mb-4 ">Member Management</h2>
+            <p class="text-gray-700">Manage members profiles, roles, and permissions with ease.</p>
         </div>
 
-        <div class="border p-6 rounded-lg shadow-lg bg-white mt-6 col-span-4">
-            <h2 class="text-xl font-bold mb-4 mt-10">Event Planning</h2>
-            <p class="text-gray-700">Plan and organize events seamlessly with our event planning tools. Create event pages, manage RSVPs, and communicate with attendees effortlessly.</p>
+        <div class="border p-6 rounded-lg shadow-lg bg-white col-span-4 md:col-span-1 w-30px">
+            <h2 class="text-xl font-bold mb-4 ">Event Planning</h2>
+            <p class="text-gray-700">Create schedule and manage events for your organization.</p>
+        </div>
+
+        <div class="border p-6 rounded-lg shadow-lg bg-white col-span-4 md:col-span-1 w-30px">
+            <h2 class="text-xl font-bold mb-4 ">Task</h2>
+            <p class="text-gray-700">Assign and track tasks to keep your team productive.</p>
+        </div>
+
+        {{-- <div>
+
+        <div class="grid grid-cols-4 md:grid-cols-3 gap-6">
+        <div class="border p-6 rounded-lg shadow-lg bg-white col-span-4 md:col-span-1 w-30px">
+            <h2 class="text-xl font-bold mb-4 ">Member Management</h2>
+            <p class="text-gray-700">Manage members profiles, roles, and permissions with ease.</p>
+        </div>
+
+        <div class="border p-6 rounded-lg shadow-lg bg-white col-span-4 md:col-span-1 w-30px">
+            <h2 class="text-xl font-bold mb-4 ">Event Planning</h2>
+            <p class="text-gray-700">Create schedule and manage events for your organization.</p>
+        </div>
+
+        <div class="border p-6 rounded-lg shadow-lg bg-white col-span-4 md:col-span-1 w-30px">
+            <h2 class="text-xl font-bold mb-4 ">Event Planning</h2>
+            <p class="text-gray-700">Create schedule and manage events for your organization.</p>
+        </div>
+
         </div> --}}
+
+        </div>
 
 
 
