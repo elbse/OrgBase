@@ -9,7 +9,7 @@
 </head>
 <body class="h-screen flex flex-col items-center justify-center bg-gray-100">
     <div class="container">
-        <h1 class="text-3xl font-bold bg-yellow-300">Welcome to the Dashboard</h1>
+        <h1 class="text-3xl font-bold bg-green-300">Welcome to the Dashboard</h1>
         <p>This is your main dashboard where you can manage your settings and view your data.</p>
     </div>
 </body>
