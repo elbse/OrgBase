@@ -27,7 +27,7 @@
 
     <div class="cards mx-auto py-16 px-4 max-w-7xl">
         <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Powerful Features</h1>
+            <h1 class="text-xl md:text-5xl font-bold text-gray-900 mb-4">Powerful Features</h1>
             <p class="text-gray-600 text-lg max-w-2xl mx-auto">Everything you need to manage your organization efficiently</p>
         </div>
 
