@@ -9,15 +9,18 @@
 </head>
 <body>
     <div class="sidebar fixed top-0 left-0 h-full w-64 bg-white shadow-md p-6">
-        <h1 class="text-2xl font-bold mb-8">OrgBase</h1>
-        <nav class="space-y-4">
-            <a href="{{route('dashboard')}}" class="block text-gray-700 hover:text-blue-900">Dashboard</a>
-            <a href="{{route('announcements')}}" class="block text-gray-700 hover:text-blue-900">Announcements</a>
-            <a href="{{route('members')}}" class="block text-gray-700 hover:text-blue-900">Members</a>
-            <a href="{{route('events')}}" class="block text-gray-700 hover:text-blue-900">Events</a>
-            <a href="{{route('tasks')}}" class="block text-gray-700 hover:text-blue-900">Tasks</a>
-            <a href="#" class="block text-gray-700 hover:text-blue-900">Documents</a>
-            <a href="{{route('finances')}}" class="block text-gray-700 hover:text-blue-900">Finances</a>
+    <div class="flex justify-center">
+        <h1 class="text-3xl font-bold mb-8">OrgBase</h1>
+    </div>
+
+        <nav class="space-y-1">
+            <a href="{{route('dashboard.show')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Dashboard</a>
+            <a href="{{route('announcements.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Announcements</a>
+            <a href="{{route('members.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Members</a>
+            <a href="{{route('events.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Events</a>
+            <a href="{{route('tasks.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Tasks</a>
+            <a href="{{route('documents.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Documents</a>
+            <a href="{{route('finances.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Finances</a>
         </nav>
 
 

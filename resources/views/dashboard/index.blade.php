@@ -11,7 +11,7 @@
     <div class="top-bar p-4 bg-white shadow">
         <h1 class="text-2xl font-bold">OrgBase</h1>
             <div class="-mt-8 space-x-2 justify-end flex"> 
-                <button class="bg-white-500 text-black px-4 py-2 rounded pointer cursor-pointer">Sign In</button>
+                <a href="{{route('dashboard.show')}}" class="bg-white-500 text-black px-4 py-2 rounded pointer cursor-pointer">Sign In</a>
                 <button class="bg-blue-900 text-white px-4 py-2 rounded pointer cursor-pointer">Get Started</button>
             </div>
     </div>

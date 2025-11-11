@@ -19,32 +19,36 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
-Route::get('/tasks', function () {
+Route::get('/dashboard.show', function () {
+    return view('dashboard.show');
+})->name('dashboard.show');
+
+Route::get('/tasks.index', function () {
     return view('tasks.index');
-})->name('tasks');
+})->name('tasks.index');
 
-Route::get('/events', function () {
+Route::get('/events.index', function () {
     return view('events.index');
-})->name('events');
+})->name('events.index');
 
-Route::get('/organizations', function(){
+Route::get('/organizations.index', function(){
     return view('organizations.index');
-})->name('organizations');
+})->name('organizations.index');
 
-Route::get('/members', function(){
+Route::get('/members.index', function(){
     return view('members.index');
-})->name('members');
+})->name('members.index');
 
-Route::get('/announcements', function(){
+Route::get('/announcements.index', function(){
     return view('announcements.index');
-})->name('announcements');
+})->name('announcements.index');
 
-Route::get('/finances', function(){
+Route::get('/finances.index', function(){
     return view('finances.index');
-})->name('finances');
+})->name('finances.index');
 
-Route::get('/documents', function(){
+Route::get('/documents.index', function(){
     return view('documents.index');
-})->name('documents');
+})->name('documents.index');
 
 
