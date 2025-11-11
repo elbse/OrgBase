@@ -1,1 +1,4 @@
-<x-layout></x-layout>
+<x-layout>
+    <h1>Documents Index Page</h1>
+    
+</x-layout>
