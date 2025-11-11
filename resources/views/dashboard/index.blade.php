@@ -11,8 +11,8 @@
     <div class="top-bar p-4 bg-white shadow">
         <h1 class="text-2xl font-bold">OrgBase</h1>
             <div class="-mt-8 space-x-2 justify-end flex"> 
-                <button class="bg-white-500 text-black px-4 py-2 rounded">Sign In</button>
-                <button class="bg-blue-900 text-white px-4 py-2 rounded">Get Started</button>
+                <button class="bg-white-500 text-black px-4 py-2 rounded pointer cursor-pointer">Sign In</button>
+                <button class="bg-blue-900 text-white px-4 py-2 rounded pointer cursor-pointer">Get Started</button>
             </div>
     </div>
 
@@ -20,8 +20,8 @@
         <h2 class="text-5xl font-bold mb-4 mt-10">Organize Your Community With Ease</h2>
         <p class="text-gray-700">All-in-one platform to manage your members, events, task, documents, and finances. Built for teams that want to focus on what matters.</p>
         <div class="mt-6 space-x-4"> 
-                <button class="bg-blue-900 text-white px-4 py-2 rounded">Get Started</button>
-                 <button class="bg-white-500 text-black px-4 py-2 rounded">Watch Demo</button>
+                <button class="bg-blue-900 text-white px-4 py-2 rounded pointer cursor-pointer">Get Started</button>
+                 <button class="bg-white-500 text-black px-4 py-2 rounded pointer cursor-pointer">Watch Demo</button>
             </div>
     </div>
 
@@ -97,7 +97,7 @@
 
     <div class="cta-section py-16 mt-16 flex flex-col items-center"> 
         <h1 class="text-4xl font-bold text-gray-900 mb-4">Ready to Get Started?</h1>
-        <button class="bg-blue-900 text-white px-4 py-2 rounded">Create your Organization</button>
+        <button class="bg-blue-900 text-white px-4 py-2 rounded pointer cursor-pointer">Create your Organization</button>
     </div>
 
     <div>
