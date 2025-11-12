@@ -27,6 +27,8 @@
     
     
     </div>
-    {{$slot}}
+    <main class="ml-64 p-6">
+        {{$slot}}
+    </main>
 </body>
 </html>

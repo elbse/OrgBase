@@ -95,7 +95,7 @@
     </div>
     </div>
 
-    <div class="cta-section py-16 mt-16 flex flex-col items-center"> 
+    <div class="cta-section py-10 mt-2 flex flex-col items-center"> 
         <h1 class="text-4xl font-bold text-gray-900 mb-4">Ready to Get Started?</h1>
         <button class="bg-blue-900 text-white px-4 py-2 rounded pointer cursor-pointer">Create your Organization</button>
     </div>
