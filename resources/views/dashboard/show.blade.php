@@ -1,14 +1,18 @@
 <x-layout>
+    <div class="flex justify-between items-center mb-8">
 
-    <div>
-        <a href="">Notification</a>
-        <a href="">User</a>
+         <div>
+            <h1 class="font-bold text-3xl">Welcome Back!</h1>
+            <h6 class="font-semibold text-sm my-2">Here's what's happening with your organization today.</h6>
+        </div>
+
+        <div class="flex justify-end gap-8 text-xl mb-4">
+            <a href=""><i class="fa-solid fa-bell"></i></a>
+            <a href=""><i class="fa-solid fa-user"></i></a>
+        </div>
     </div>
 
-    <div>
-        <h1 class="font-bold text-3x    l">Welcome Back!</h1>
-        <h6>Here's what's happening with your organization today.</h6>
-    </div>
+   
 
     <div>
         <div>
