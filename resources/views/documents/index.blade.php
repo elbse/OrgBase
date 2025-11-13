@@ -1,5 +1,11 @@
 <x-layout>
-    <h1>Documents Index Page</h1>
+     <div>
+         <h1>Documents</h1>
+         <h6>Manage your organization's documents.</h6>
+
+         <a href="">Add Member</a>
+    
+    </div>
     <div>
         <!-- Content for documents index page goes here -->
         <div>

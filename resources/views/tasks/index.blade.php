@@ -1,5 +1,11 @@
 <x-layout>
-    <h1>Tasks Index Page</h1>
+         <div>
+         <h1>Tasks</h1>
+         <h6>Manage projects and track progress.</h6>
+
+         <a href="">Add Member</a>
+    
+    </div>
     <div>
         <!-- Content for tasks index page goes here -->
         <div>

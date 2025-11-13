@@ -1,5 +1,11 @@
 <x-layout>
-    <h1>Events Index Page</h1>
+    <div>
+         <h1>Events</h1>
+         <h6>Manage your organization events.</h6>
+
+         <a href="">Add Event</a>
+    
+    </div>
     <div>
         <!-- Content for events index page goes here -->
         <div>
