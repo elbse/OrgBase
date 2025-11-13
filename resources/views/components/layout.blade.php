@@ -15,7 +15,6 @@
 
         <nav class="space-y-1">
             <a href="{{route('dashboard.show')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Dashboard</a>
-            <a href="{{route('announcements.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Announcements</a>
             <a href="{{route('members.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Members</a>
             <a href="{{route('events.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Events</a>
             <a href="{{route('tasks.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-3 transition-all duration-200 hover:bg-blue-700">Tasks</a>
