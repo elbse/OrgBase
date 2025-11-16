@@ -8,32 +8,83 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="sidebar fixed top-0 left-0 h-full w-64 bg-white shadow-md p-6">
-    <div class="flex justify-center">
-        <h1 class="text-3xl font-bold mb-8">OrgBase</h1>
-    </div>
-
-        <nav class="space-y-1">
-       
-            <a href="{{route('dashboard.show')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Dashboard</a>
-            <a href="{{route('members.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Members</a>
-            <a href="{{route('events.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Events</a>
-            <a href="{{route('tasks.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Tasks</a>
-            <a href="{{route('documents.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Documents</a>
-             <a href="{{route('organizations.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Organization</a>
-            <a href="{{route('finances.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Finances</a>
-        </nav>
-
-        <div class="mt-130 text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-red-700">
-            <a>Log out</a>
+<body class="bg-gray-50">
+    <div class="sidebar fixed top-0 left-0 h-full w-64 bg-gradient-to-b from-blue-900 to-blue-800 shadow-xl z-50 flex flex-col">
+        <!-- Logo Section -->
+        <div class="p-6 border-b border-blue-700">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-building text-blue-900 text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-white">OrgBase</h1>
+            </div>
         </div>
 
+        <!-- Navigation Menu -->
+        <nav class="flex-1 overflow-y-auto p-4 space-y-2">
+            <a href="{{route('dashboard.show')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-chart-line w-5 text-center"></i>
+                <span class="font-medium">Dashboard</span>
+            </a>
+            
+            <a href="{{route('members.index')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-users w-5 text-center"></i>
+                <span class="font-medium">Members</span>
+            </a>
+            
+            <a href="{{route('events.index')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-calendar-days w-5 text-center"></i>
+                <span class="font-medium">Events</span>
+            </a>
+            
+            <a href="{{route('tasks.index')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-tasks w-5 text-center"></i>
+                <span class="font-medium">Tasks</span>
+            </a>
+            
+            <a href="{{route('documents.index')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-file w-5 text-center"></i>
+                <span class="font-medium">Documents</span>
+            </a>
+            
+            <a href="{{route('finances.index')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-dollar-sign w-5 text-center"></i>
+                <span class="font-medium">Finances</span>
+            </a>
+            
+            <a href="{{route('announcements.index')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-bullhorn w-5 text-center"></i>
+                <span class="font-medium">Announcements</span>
+            </a>
+            
+            <a href="{{route('organizations.index')}}" class="group flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-blue-700 transition-all duration-200 hover:translate-x-1">
+                <i class="fa-solid fa-building w-5 text-center"></i>
+                <span class="font-medium">Organizations</span>
+            </a>
+        </nav>
 
-    
-    
+        <!-- User Section -->
+        <div class="p-4 border-t border-blue-700">
+            <div class="mb-4 p-3 bg-blue-700 rounded-lg">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-user text-blue-900"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-white font-semibold text-sm truncate">John Doe</p>
+                        <p class="text-blue-200 text-xs truncate">Admin</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#" class="flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-red-600 transition-all duration-200 group">
+                <i class="fa-solid fa-right-from-bracket w-5 text-center"></i>
+                <span class="font-medium">Logout</span>
+            </a>
+        </div>
     </div>
-    <main class="ml-64 p-6">
+    
+    <main class="ml-64 min-h-screen p-6">
         {{$slot}}
     </main>
 </body>
