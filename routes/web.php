@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,9 @@ Route::get('/dashboard.show', function () {
     return view('dashboard.show');
 })->name('dashboard.show');
 
-Route::get('/tasks.index', function () {
-    return view('tasks.index');
-})->name('tasks.index');
+Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
+Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
+Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
 
 Route::get('/events.index', function () {
     return view('events.index');

@@ -1,13 +1,20 @@
 <x-layout>
+    @if(session('success'))
+        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center gap-2">
+            <i class="fa-solid fa-check-circle"></i>
+            <span>{{session('success')}}</span>
+        </div>
+    @endif
+
     <div class="flex justify-between items-center mb-8">
         <div>
             <h1 class="text-3xl font-bold text-gray-900">Tasks</h1>
             <p class="text-gray-600 mt-2">Manage projects and track progress across your organization.</p>
         </div>
-        <button class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
+        <a href="{{route('tasks.create')}}" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
             <i class="fa-solid fa-plus"></i>
             Create Task
-        </button>
+        </a>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
