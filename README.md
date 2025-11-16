@@ -51,7 +51,7 @@ Every year, student organizations face the same crisis:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/orgbase.git
+git clone https://github.com/elbse/orgbase.git
 cd orgbase
 
 # Install dependencies
