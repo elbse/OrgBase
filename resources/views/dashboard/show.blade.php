@@ -15,20 +15,20 @@
    
 
     <div class="grid grid-cols-4 gap-6">
-        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
-            <h4 class="text-1xl text-black flex justify-center item-center">Total Members</h4>
+        <div class="border-2 border-blue-900 p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black font-bold flex justify-center item-center">Total Members</h4>
         </div>
 
-        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
-            <h4 class="text-1xl text-black flex justify-center item-center">Upcoming Events</h4>
+        <div class="border-2 border-blue-900 p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black font-bold flex justify-center item-center">Upcoming Events</h4>
         </div>
 
-        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
-            <h4 class="text-1xl text-black flex justify-center item-center">Announcements</h4>
+        <div class="border-2 border-blue-900 p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black font-bold flex justify-center item-center">Announcements</h4>
         </div>
 
-        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
-            <h4 class="text-1xl text-black flex justify-center item-center">Active Tasks</h4>
+        <div class="border-2 border-blue-900 p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black font-bold flex justify-center item-center">Active Tasks</h4>
         </div>
 
     </div>
