@@ -51,4 +51,8 @@ Route::get('/documents.index', function(){
     return view('documents.index');
 })->name('documents.index');
 
+Route::get('/organizations.index', function(){
+    return view('organizations.index');
+})->name('organizations.index');
+
 

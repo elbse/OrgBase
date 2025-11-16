@@ -21,6 +21,7 @@
             <a href="{{route('events.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Events</a>
             <a href="{{route('tasks.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Tasks</a>
             <a href="{{route('documents.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Documents</a>
+             <a href="{{route('organizations.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Organization</a>
             <a href="{{route('finances.index')}}" class="text-black-900 flex items-center gap-3 rounded-lg px-4 py-2 transition-all duration-200 hover:bg-blue-700">Finances</a>
         </nav>
 
