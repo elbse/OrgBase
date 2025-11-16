@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex justify-between items-center mb-8">
+    <div class="flex justify-between items-center mb-6">
 
          <div>
             <h1 class="font-bold text-3xl">Welcome Back!</h1>
@@ -14,21 +14,21 @@
 
    
 
-    <div>
-        <div>
-        Total Members
+    <div class="grid grid-cols-4 gap-6">
+        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black flex justify-center item-center">Total Members</h4>
         </div>
 
-        <div>
-        Upcoming Events
+        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black flex justify-center item-center">Upcoming Events</h4>
         </div>
 
-        <div>
-        Announcements
+        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black flex justify-center item-center">Announcements</h4>
         </div>
 
-        <div>
-        Active Tasks
+        <div class="border-2 border-black p-8 m-1.5 border-radius:2px rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300" >
+            <h4 class="text-1xl text-black flex justify-center item-center">Active Tasks</h4>
         </div>
 
     </div>
