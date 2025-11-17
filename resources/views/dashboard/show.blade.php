@@ -6,13 +6,112 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <a href="#" class="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors duration-200">
-                <i class="fa-solid fa-bell text-xl"></i>
-                <span class="absolute top-0 right-0 w-3 h-3 bg-red-500 rounded-full border-2 border-white"></span>
-            </a>
-            <a href="#" class="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors duration-200">
-                <i class="fa-solid fa-user text-xl"></i>
-            </a>
+            <div class="relative" data-panel-wrapper>
+                <button
+                    type="button"
+                    data-toggle-panel="notifications"
+                    class="relative p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bell text-xl"></i>
+                    <span class="absolute -top-0.5 -right-0.5 w-5 h-5 bg-red-500 text-white text-[10px] font-semibold rounded-full border-2 border-white flex items-center justify-center">3</span>
+                </button>
+
+                <div
+                    data-panel="notifications"
+                    class="hidden absolute right-0 mt-3 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 z-10"
+                >
+                    <div class="px-4 py-3 border-b border-gray-100 flex items-center justify-between">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-900">Notifications</h3>
+                            <p class="text-xs text-gray-500">You have 3 new alerts</p>
+                        </div>
+                        <button class="text-xs font-medium text-blue-600 hover:text-blue-800">Mark all read</button>
+                    </div>
+
+                    <div class="max-h-80 overflow-y-auto divide-y divide-gray-100">
+                        <div class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                            <span class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-semibold">JD</span>
+                            <div class="flex-1">
+                                <p class="text-sm text-gray-900 font-medium">New member joined</p>
+                                <p class="text-xs text-gray-500">John Doe joined the design team</p>
+                                <p class="text-[11px] text-gray-400 mt-1">2 minutes ago</p>
+                            </div>
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mt-1"></span>
+                        </div>
+
+                        <div class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                            <span class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-semibold">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                            <div class="flex-1">
+                                <p class="text-sm text-gray-900 font-medium">Task completed</p>
+                                <p class="text-xs text-gray-500">Website refresh handed off to QA</p>
+                                <p class="text-[11px] text-gray-400 mt-1">45 minutes ago</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+                            <span class="w-10 h-10 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-sm font-semibold">
+                                <i class="fa-solid fa-calendar"></i>
+                            </span>
+                            <div class="flex-1">
+                                <p class="text-sm text-gray-900 font-medium">Event reminder</p>
+                                <p class="text-xs text-gray-500">Leadership sync starts in 30 minutes</p>
+                                <p class="text-[11px] text-gray-400 mt-1">1 hour ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" data-panel-wrapper>
+                <button
+                    type="button"
+                    data-toggle-panel="profile"
+                    class="flex items-center gap-2 p-2 pl-0 text-gray-600 hover:text-gray-900 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">JD</div>
+                    <div class="hidden md:block text-left">
+                        <p class="text-sm font-medium text-gray-900">John Doe</p>
+                        <p class="text-xs text-gray-500">Admin</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                </button>
+
+                <div
+                    data-panel="profile"
+                    class="hidden absolute right-0 mt-3 w-60 bg-white rounded-xl shadow-2xl border border-gray-100 z-10 overflow-hidden"
+                >
+                    <div class="px-4 py-4 bg-blue-600 text-white">
+                        <p class="text-sm uppercase tracking-wide text-blue-200">Signed in as</p>
+                        <p class="text-lg font-semibold">john.doe@orgbase.com</p>
+                    </div>
+                    <div class="py-2">
+                        <a href="{{route('dashboard.show')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                            <i class="fa-solid fa-circle-user w-4 text-blue-600"></i>
+                            View profile
+                        </a>
+                        <a href="{{route('tasks.index')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                            <i class="fa-solid fa-gear w-4 text-blue-600"></i>
+                            Workspace settings
+                        </a>
+                        <a href="{{route('announcements.index')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                            <i class="fa-solid fa-bullhorn w-4 text-blue-600"></i>
+                            Notification center
+                        </a>
+                    </div>
+                    <div class="border-t border-gray-100">
+                        <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50">
+                            <i class="fa-solid fa-right-from-bracket w-4"></i>
+                            Sign out
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -256,4 +355,49 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const closeAllPanels = () => {
+                document.querySelectorAll('[data-panel]').forEach(panel => panel.classList.add('hidden'));
+                document.querySelectorAll('[data-toggle-panel]').forEach(button => button.setAttribute('aria-expanded', 'false'));
+            };
+
+            document.querySelectorAll('[data-toggle-panel]').forEach(button => {
+                const panelName = button.getAttribute('data-toggle-panel');
+                const panel = document.querySelector(`[data-panel="${panelName}"]`);
+
+                if (!panel) {
+                    return;
+                }
+
+                button.addEventListener('click', event => {
+                    event.stopPropagation();
+
+                    const isHidden = panel.classList.contains('hidden');
+                    closeAllPanels();
+
+                    if (isHidden) {
+                        panel.classList.remove('hidden');
+                        button.setAttribute('aria-expanded', 'true');
+                    } else {
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            document.addEventListener('click', event => {
+                const clickedInsidePanel = event.target.closest('[data-panel]') || event.target.closest('[data-toggle-panel]');
+                if (!clickedInsidePanel) {
+                    closeAllPanels();
+                }
+            });
+
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape') {
+                    closeAllPanels();
+                }
+            });
+        });
+    </script>
 </x-layout>
