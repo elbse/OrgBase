@@ -95,7 +95,7 @@ Visit `http://localhost:8000`
 - [ ] Performance enhancements
 - [ ] User testing with pilot clubs
 
-**Target MVP Launch:** Q1 2025
+**Target MVP Launch:** Q2 2026
 
 ---
 
