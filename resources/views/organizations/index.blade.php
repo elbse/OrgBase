@@ -48,7 +48,7 @@ In<x-layout>
             description="Supporting local communities through volunteer work and charitable initiatives."
             icon="fa-solid fa-heart"
             icon-class="text-purple-600 text-3xl"
-            header-class="bg-linear-to-r from-purple-500 to-purple-600"
+            header-class="bg-linear-to-r from-green-500 to-purple-600"
             header-height-class="h-40"
             header-icon-wrapper-class="w-20 h-20 bg-white rounded-full flex items-center justify-center"
             button-class="bg-purple-600 hover:bg-purple-700"
