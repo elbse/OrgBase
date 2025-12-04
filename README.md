@@ -3,7 +3,7 @@
 > Preserving institutional knowledge across student organization leadership transitions.
 
 **Status:** 🚧 Under Development
-""Currently:"" Understanding the database for the project. 
+**Currently:** Understanding the database for the project. 
 
 ---
 
