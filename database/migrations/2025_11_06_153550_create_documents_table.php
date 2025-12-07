@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('type')->nullable(); // PDF, DOCX, etc.
+            $table->string('file_path');
+            $table->string('file_size')->nullable();
+            $table->foreignId('uploaded_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->foreignId('organization_id')->nullable()->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('folder_id')->nullable();
+            $table->string('status')->default('Active'); // Active, Archived, Deleted
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

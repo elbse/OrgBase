@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\DocumentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,9 +52,10 @@ Route::get('/finances.index', function(){
     return view('finances.index');
 })->name('finances.index');
 
-Route::get('/documents.index', function(){
-    return view('documents.index');
-})->name('documents.index');
+Route::get('/documents.index', [DocumentController::class, 'index'])->name('documents.index');
+Route::get('/documents/{document}', [DocumentController::class, 'show'])->name('documents.show');
+Route::get('/documents/{document}/download', [DocumentController::class, 'download'])->name('documents.download');
+Route::delete('/documents/{document}', [DocumentController::class, 'destroy'])->name('documents.destroy');
 
 Route::get('/organizations.index', function(){
     return view('organizations.index');
