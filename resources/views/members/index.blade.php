@@ -10,6 +10,12 @@
         </a>
     </div>
 
+    @if(session('success'))
+        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative" role="alert">
+            <span class="block sm:inline">{{ session('success') }}</span>
+        </div>
+    @endif
+
     <div class="bg-white rounded-lg shadow-md overflow-hidden">
         <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
             <div class="flex items-center gap-4">
@@ -43,95 +49,79 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    <tr class="hover:bg-gray-50 transition-colors duration-150">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <span class="text-blue-600 font-semibold">JD</span>
+                    @forelse($members ?? [] as $member)
+                        @php
+                            $user = $member->user;
+                            $name = $user->name ?? '';
+                            $initials = strtoupper(substr($name, 0, 1) . (strlen($name) > 1 ? substr(strstr($name, ' ') ?: $name, 1, 1) : ''));
+                            $colorClasses = [
+                                ['bg-blue-100', 'text-blue-600'],
+                                ['bg-green-100', 'text-green-600'],
+                                ['bg-orange-100', 'text-orange-600'],
+                                ['bg-purple-100', 'text-purple-600'],
+                                ['bg-pink-100', 'text-pink-600'],
+                                ['bg-indigo-100', 'text-indigo-600']
+                            ];
+                            $colorIndex = abs(crc32($name)) % count($colorClasses);
+                            $avatarColor = $colorClasses[$colorIndex];
+                        @endphp
+                        <tr class="hover:bg-gray-50 transition-colors duration-150">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 {{ $avatarColor[0] }} rounded-full flex items-center justify-center">
+                                        <span class="{{ $avatarColor[1] }} font-semibold">{{ $initials }}</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-medium text-gray-900">{{ $user->name ?? 'N/A' }}</div>
+                                        @if($member->phone)
+                                            <div class="text-sm text-gray-500">{{ $member->phone }}</div>
+                                        @endif
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                    <div class="text-sm text-gray-500">+1 (555) 123-4567</div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{{ $user->email ?? 'N/A' }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                @php
+                                    $roleColors = [
+                                        'Admin' => 'bg-purple-100 text-purple-800',
+                                        'Member' => 'bg-blue-100 text-blue-800',
+                                        'Volunteer' => 'bg-yellow-100 text-yellow-800'
+                                    ];
+                                    $roleColor = $roleColors[$member->role] ?? 'bg-gray-100 text-gray-800';
+                                @endphp
+                                <span class="px-3 py-1 text-xs font-semibold rounded-full {{ $roleColor }}">{{ $member->role }}</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                @php
+                                    $statusColor = $member->status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
+                                @endphp
+                                <span class="px-3 py-1 text-xs font-semibold rounded-full {{ $statusColor }}">{{ $member->status }}</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{{ $member->created_at->format('M d, Y') }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <div class="flex items-center gap-3">
+                                    <a href="#" class="text-blue-600 hover:text-blue-900"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-edit"></i></a>
+                                    <a href="#" class="text-red-600 hover:text-red-900"><i class="fa-solid fa-trash"></i></a>
                                 </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">john.doe@example.com</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800">Admin</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Jan 10, 2024</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-900"><i class="fa-solid fa-eye"></i></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-edit"></i></a>
-                                <a href="#" class="text-red-600 hover:text-red-900"><i class="fa-solid fa-trash"></i></a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50 transition-colors duration-150">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                                    <span class="text-green-600 font-semibold">JS</span>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="px-6 py-8 text-center text-gray-500">
+                                <div class="flex flex-col items-center gap-2">
+                                    <i class="fa-solid fa-users text-4xl text-gray-300"></i>
+                                    <p class="text-lg font-medium">No members found</p>
+                                    <p class="text-sm">Get started by adding your first member.</p>
                                 </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Jane Smith</div>
-                                    <div class="text-sm text-gray-500">+1 (555) 987-6543</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">jane.smith@example.com</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Member</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Jan 15, 2024</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-900"><i class="fa-solid fa-eye"></i></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-edit"></i></a>
-                                <a href="#" class="text-red-600 hover:text-red-900"><i class="fa-solid fa-trash"></i></a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-gray-50 transition-colors duration-150">
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                                    <span class="text-orange-600 font-semibold">MJ</span>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-medium text-gray-900">Mike Johnson</div>
-                                    <div class="text-sm text-gray-500">+1 (555) 456-7890</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">mike.johnson@example.com</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">Volunteer</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Jan 20, 2024</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                            <div class="flex items-center gap-3">
-                                <a href="#" class="text-blue-600 hover:text-blue-900"><i class="fa-solid fa-eye"></i></a>
-                                <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-edit"></i></a>
-                                <a href="#" class="text-red-600 hover:text-red-900"><i class="fa-solid fa-trash"></i></a>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
         <div class="bg-gray-50 px-6 py-4 border-t border-gray-200 flex justify-between items-center">
-            <p class="text-sm text-gray-600">Showing 1-3 of 3 members</p>
+            <p class="text-sm text-gray-600">Showing {{ ($members ?? collect())->count() }} of {{ ($members ?? collect())->count() }} members</p>
             <div class="flex gap-2">
                 <button class="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 border border-gray-300 rounded-lg hover:bg-white transition-colors duration-200 disabled:opacity-50" disabled>
                     Previous
