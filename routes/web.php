@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +39,9 @@ Route::get('/organizations.index', function(){
     return view('organizations.index');
 })->name('organizations.index');
 
-Route::get('/members.index', function(){
-    return view('members.index');
-})->name('members.index');
+Route::get('/members', [MemberController::class, 'index'])->name('members.index');
+Route::get('/members/create', [MemberController::class, 'create'])->name('members.create');
+Route::post('/members', [MemberController::class, 'store'])->name('members.store');
 
 Route::get('/announcements.index', function(){
     return view('announcements.index');

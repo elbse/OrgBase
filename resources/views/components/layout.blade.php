@@ -65,24 +65,7 @@
         </nav>
 
         <!-- User Section -->
-        <div class="p-4 border-t border-blue-700">
-            <div class="mb-4 p-3 bg-blue-700 rounded-lg">
-                <div class="flex items-center gap-3 mb-2">
-                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <i class="fa-solid fa-user text-blue-900"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="text-white font-semibold text-sm truncate">John Doe</p>
-                        <p class="text-blue-200 text-xs truncate">Admin</p>
-                    </div>
-                </div>
-            </div>
-            
-            <a href="#" class="flex items-center gap-3 rounded-lg px-4 py-3 text-white hover:bg-red-600 transition-all duration-200 group">
-                <i class="fa-solid fa-right-from-bracket w-5 text-center"></i>
-                <span class="font-medium">Logout</span>
-            </a>
-        </div>
+       
     </div>
     
     <main class="ml-64 min-h-screen p-6">

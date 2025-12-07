@@ -4,10 +4,10 @@
             <h1 class="text-3xl font-bold text-gray-900">Members</h1>
             <p class="text-gray-600 mt-2">Manage your organization members and their roles.</p>
         </div>
-        <button class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
+        <a href="{{route('members.create')}}" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
             <i class="fa-solid fa-plus"></i>
             Add Member
-        </button>
+        </a>
     </div>
 
     <div class="bg-white rounded-lg shadow-md overflow-hidden">
