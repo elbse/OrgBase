@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Organization;
 use App\Models\OrganizationMember;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -38,6 +39,12 @@ class MemberController extends Controller
             'status' => 'required|in:Active,Inactive',
         ]);
 
+        // Get or create a default organization
+        $organization = Organization::first();
+        if (!$organization) {
+            $organization = Organization::create([]);
+        }
+
         // Create user first
         $user = User::create([
             'name' => $validated['name'],
@@ -48,7 +55,7 @@ class MemberController extends Controller
         // Create organization member
         OrganizationMember::create([
             'user_id' => $user->id,
-            'organization_id' => 1, // Default to organization 1, adjust as needed
+            'organization_id' => $organization->id,
             'role' => $validated['role'],
             'status' => $validated['status'],
             'phone' => $validated['phone'] ?? null,
