@@ -1,4 +1,3 @@
-// app/Http/Controllers/Api/MemberController.php
 <?php
 
 namespace App\Http\Controllers\Api;

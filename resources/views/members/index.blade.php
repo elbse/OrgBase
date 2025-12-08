@@ -100,9 +100,19 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{{ $member->created_at->format('M d, Y') }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex items-center gap-3">
-                                    <a href="#" class="text-blue-600 hover:text-blue-900"><i class="fa-solid fa-eye"></i></a>
-                                    <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-edit"></i></a>
-                                    <a href="#" class="text-red-600 hover:text-red-900"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="{{ route('members.show', $member) }}" class="text-blue-600 hover:text-blue-900" title="View member">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                    <a href="{{ route('members.edit', $member) }}" class="text-gray-600 hover:text-gray-900" title="Edit member">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="{{ route('members.destroy', $member) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this member?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-600 hover:text-red-900" title="Delete member">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>

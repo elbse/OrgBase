@@ -4,10 +4,10 @@
             <h1 class="text-3xl font-bold text-gray-900">Documents</h1>
             <p class="text-gray-600 mt-2">Manage your organization's documents and files.</p>
         </div>
-        <button class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
+        <a href="{{route('documents.create')}}" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
             <i class="fa-solid fa-plus"></i>
             Add Document
-        </button>
+        </a>
     </div>
 
     @if(session('success'))

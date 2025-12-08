@@ -43,6 +43,10 @@ Route::get('/organizations.index', function(){
 Route::get('/members', [MemberController::class, 'index'])->name('members.index');
 Route::get('/members/create', [MemberController::class, 'create'])->name('members.create');
 Route::post('/members', [MemberController::class, 'store'])->name('members.store');
+Route::get('/members/{member}', [MemberController::class, 'show'])->name('members.show');
+Route::get('/members/{member}/edit', [MemberController::class, 'edit'])->name('members.edit');
+Route::put('/members/{member}', [MemberController::class, 'update'])->name('members.update');
+Route::delete('/members/{member}', [MemberController::class, 'destroy'])->name('members.destroy');
 
 Route::get('/announcements.index', function(){
     return view('announcements.index');
@@ -53,6 +57,8 @@ Route::get('/finances.index', function(){
 })->name('finances.index');
 
 Route::get('/documents.index', [DocumentController::class, 'index'])->name('documents.index');
+Route::get('/documents/create', [DocumentController::class, 'create'])->name('documents.create');
+Route::post('/documents', [DocumentController::class, 'store'])->name('documents.store');
 Route::get('/documents/{document}', [DocumentController::class, 'show'])->name('documents.show');
 Route::get('/documents/{document}/download', [DocumentController::class, 'download'])->name('documents.download');
 Route::delete('/documents/{document}', [DocumentController::class, 'destroy'])->name('documents.destroy');
