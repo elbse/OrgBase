@@ -53,6 +53,14 @@ Route::get('/announcements.index', function(){
     return view('announcements.index');
 })->name('announcements.index');
 
+Route::get('/announcements/create', function () {
+    return view('announcements.create');
+})->name('announcements.create');
+
+Route::get('/announcements/{announcement}', function (string $announcement) {
+    return view('announcements.show', compact('announcement'));
+})->name('announcements.show');
+
 Route::get('/finances.index', function(){
     return view('finances.index');
 })->name('finances.index');

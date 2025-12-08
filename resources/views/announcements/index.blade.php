@@ -4,10 +4,10 @@
             <h1 class="text-3xl font-bold text-gray-900">Announcements</h1>
             <p class="text-gray-600 mt-2">Share important updates and news with your organization.</p>
         </div>
-        <button class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
+        <a href="{{ route('announcements.create') }}" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 font-semibold flex items-center gap-2">
             <i class="fa-solid fa-plus"></i>
             Create Announcement
-        </button>
+        </a>
     </div>
 
     <div class="space-y-6">
@@ -27,14 +27,14 @@
                 </div>
                 <p class="text-gray-700 mb-4">We have scheduled an important meeting for all members on February 25th at 3:00 PM. Please mark your calendars and prepare your agenda items.</p>
                 <div class="flex items-center gap-4 pt-4 border-t border-gray-200">
-                    <button class="text-blue-600 hover:text-blue-800 text-sm font-semibold flex items-center gap-2">
+                    <a href="{{ route('announcements.show', 'important-meeting-scheduled') }}" class="text-blue-600 hover:text-blue-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-eye"></i>
                         View Details
-                    </button>
-                    <button class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
+                    </a>
+                    <a href="mailto:?subject=Important%20Meeting%20Scheduled&body={{ urlencode(route('announcements.show', 'important-meeting-scheduled')) }}" class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-share"></i>
                         Share
-                    </button>
+                    </a>
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                         <i class="fa-solid fa-users"></i>
                         <span>245 views</span>
@@ -59,14 +59,14 @@
                 </div>
                 <p class="text-gray-700 mb-4">Join us for our annual gala event on March 15th! This year's theme is "Celebrating Excellence". Tickets are now available. Don't miss out on this special evening.</p>
                 <div class="flex items-center gap-4 pt-4 border-t border-gray-200">
-                    <button class="text-green-600 hover:text-green-800 text-sm font-semibold flex items-center gap-2">
+                    <a href="{{ route('announcements.show', 'upcoming-event-annual-gala') }}" class="text-green-600 hover:text-green-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-eye"></i>
                         View Details
-                    </button>
-                    <button class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
+                    </a>
+                    <a href="mailto:?subject=Annual%20Gala&body={{ urlencode(route('announcements.show', 'upcoming-event-annual-gala')) }}" class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-share"></i>
                         Share
-                    </button>
+                    </a>
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                         <i class="fa-solid fa-users"></i>
                         <span>189 views</span>
@@ -91,14 +91,14 @@
                 </div>
                 <p class="text-gray-700 mb-4">We're thrilled to announce this year's award winners! Join us in congratulating all the outstanding members who have made significant contributions to our organization.</p>
                 <div class="flex items-center gap-4 pt-4 border-t border-gray-200">
-                    <button class="text-purple-600 hover:text-purple-800 text-sm font-semibold flex items-center gap-2">
+                    <a href="{{ route('announcements.show', 'congratulations-award-winners') }}" class="text-purple-600 hover:text-purple-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-eye"></i>
                         View Details
-                    </button>
-                    <button class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
+                    </a>
+                    <a href="mailto:?subject=Award%20Winners&body={{ urlencode(route('announcements.show', 'congratulations-award-winners')) }}" class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-share"></i>
                         Share
-                    </button>
+                    </a>
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                         <i class="fa-solid fa-users"></i>
                         <span>312 views</span>
@@ -123,14 +123,14 @@
                 </div>
                 <p class="text-gray-700 mb-4">Scheduled maintenance will be performed on January 20th from 2:00 AM to 4:00 AM. The system will be temporarily unavailable during this time.</p>
                 <div class="flex items-center gap-4 pt-4 border-t border-gray-200">
-                    <button class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
+                    <a href="{{ route('announcements.show', 'system-maintenance-notice') }}" class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-eye"></i>
                         View Details
-                    </button>
-                    <button class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
+                    </a>
+                    <a href="mailto:?subject=System%20Maintenance%20Notice&body={{ urlencode(route('announcements.show', 'system-maintenance-notice')) }}" class="text-gray-600 hover:text-gray-800 text-sm font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-share"></i>
                         Share
-                    </button>
+                    </a>
                     <div class="flex items-center gap-2 text-sm text-gray-500">
                         <i class="fa-solid fa-users"></i>
                         <span>156 views</span>
