@@ -65,6 +65,9 @@
                             $colorIndex = abs(crc32($name)) % count($colorClasses);
                             $avatarColor = $colorClasses[$colorIndex];
                         @endphp
+                        @php
+                            $whatsAppNumber = $member->phone ? preg_replace('/\D+/', '', $member->phone) : null;
+                        @endphp
                         <tr class="hover:bg-gray-50 transition-colors duration-150">
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center gap-3">
@@ -106,6 +109,16 @@
                                     <a href="{{ route('members.edit', $member) }}" class="text-gray-600 hover:text-gray-900" title="Edit member">
                                         <i class="fa-solid fa-edit"></i>
                                     </a>
+                                    @if($user?->email)
+                                        <a href="mailto:{{ $user->email }}" class="text-emerald-600 hover:text-emerald-900" title="Email member">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </a>
+                                    @endif
+                                    @if($whatsAppNumber)
+                                        <a href="https://wa.me/{{ $whatsAppNumber }}" target="_blank" rel="noopener" class="text-green-600 hover:text-green-800" title="Message via WhatsApp">
+                                            <i class="fa-solid fa-comment-dots"></i>
+                                        </a>
+                                    @endif
                                     <form action="{{ route('members.destroy', $member) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this member?');">
                                         @csrf
                                         @method('DELETE')
