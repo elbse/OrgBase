@@ -91,24 +91,27 @@
                         <p class="text-lg font-semibold">john.doe@orgbase.com</p>
                     </div>
                     <div class="py-2">
-                        <a href="{{route('dashboard.show')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                        <a href="{{route('profile.show')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                             <i class="fa-solid fa-circle-user w-4 text-blue-600"></i>
                             View profile
                         </a>
-                        <a href="{{route('tasks.index')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                        <a href="{{route('settings.workspace')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                             <i class="fa-solid fa-gear w-4 text-blue-600"></i>
                             Workspace settings
                         </a>
-                        <a href="{{route('announcements.index')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                        <a href="{{route('notifications.index')}}" class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
                             <i class="fa-solid fa-bullhorn w-4 text-blue-600"></i>
                             Notification center
                         </a>
                     </div>
                     <div class="border-t border-gray-100">
-                        <a href="#" class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50">
-                            <i class="fa-solid fa-right-from-bracket w-4"></i>
-                            Sign out
-                        </a>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="w-full text-left flex items-center gap-3 px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50">
+                                <i class="fa-solid fa-right-from-bracket w-4"></i>
+                                Sign out
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

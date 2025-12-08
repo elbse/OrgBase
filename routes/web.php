@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\MemberController;
@@ -66,5 +67,26 @@ Route::delete('/documents/{document}', [DocumentController::class, 'destroy'])->
 Route::get('/organizations.index', function(){
     return view('organizations.index');
 })->name('organizations.index');
+
+// Profile & settings
+Route::get('/profile', function () {
+    $user = Auth::user();
+    return view('profile.show', compact('user'));
+})->name('profile.show');
+
+Route::get('/settings/workspace', function () {
+    return view('settings.workspace');
+})->name('settings.workspace');
+
+Route::get('/notifications', function () {
+    return view('notifications.index');
+})->name('notifications.index');
+
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/');
+})->name('logout');
 
 
