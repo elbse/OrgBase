@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('file_path');
             $table->string('file_size')->nullable();
             $table->foreignId('uploaded_by')->nullable()->constrained('users')->onDelete('set null');
-            $table->foreignId('organization_id')->nullable()->constrained()->onDelete('cascade');
+            // Use a simple nullable foreign key column to avoid migration order issues.
+            // You can add an explicit foreign key constraint in a later migration if needed.
+            $table->foreignId('organization_id')->nullable();
             $table->unsignedBigInteger('folder_id')->nullable();
             $table->string('status')->default('Active'); // Active, Archived, Deleted
             $table->text('description')->nullable();

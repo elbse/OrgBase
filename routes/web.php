@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,9 +62,12 @@ Route::get('/announcements/{announcement}', function (string $announcement) {
     return view('announcements.show', compact('announcement'));
 })->name('announcements.show');
 
-Route::get('/finances.index', function(){
-    return view('finances.index');
-})->name('finances.index');
+Route::get('/finances', [TransactionController::class, 'index'])->name('finances.index');
+// Backwards-compat: allow old URL /finances.index to still work
+Route::get('/finances.index', function () {
+    return redirect()->route('finances.index');
+});
+Route::post('/finances', [TransactionController::class, 'store'])->name('finances.store');
 
 Route::get('/documents.index', [DocumentController::class, 'index'])->name('documents.index');
 Route::get('/documents/create', [DocumentController::class, 'create'])->name('documents.create');
