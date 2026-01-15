@@ -117,7 +117,7 @@ This is a student-led open source project. Contributions welcome!
 
 **Project Lead:** Charisse Priego  
 **Email:** c.priego.545409@umindanao.edu.ph 
-**Issues:** [GitHub Issues](https://github.com/elbse/orgbase/issues)
+
 
 ---
 
