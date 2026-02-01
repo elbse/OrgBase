@@ -2,7 +2,7 @@
 
 > Preserving institutional knowledge across student organization leadership transitions.
 
-**Status:** 🚧 Under Development
+**Status:** 🚧 Designing for system developmen
 
 
 ---
@@ -117,7 +117,7 @@ This is a student-led open source project. Contributions welcome!
 
 **Project Lead:** Charisse Priego  
 **Email:** c.priego.545409@umindanao.edu.ph 
-**Issues:** [GitHub Issues](https://github.com/elbse/orgbase/issues)
+
 
 ---
 
