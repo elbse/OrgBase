@@ -2,7 +2,7 @@
 
 > Preserving institutional knowledge across student organization leadership transitions.
 
-**Status:** 🚧 Under Development
+**Status:** 🚧 Designing for system developmen
 
 
 ---
